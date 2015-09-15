@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Tiger66639/XobotOS.svg)](https://travis-ci.org/Tiger66639/XobotOS)
 XobotOS project
 ===============
 
