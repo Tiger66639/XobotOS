@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Xobotos by Tiger66639</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/Tiger66639/XobotOS">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/Tiger66639/XobotOS/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/Tiger66639/XobotOS/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Xobotos</h1>
+          <p>XobotOS - Android ported to C#</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/Tiger66639">Tiger66639</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="xobotos-project" class="anchor" href="#xobotos-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>XobotOS project</h1>
+
+<p>XobotOS is a Xamarin research project that explored porting Android
+4.0 from Java/Dalvik to C# to explore the performance and memory
+footprint benefits of C#.</p>
+
+<p>XobotOS is a semi-automated port of the Android 4.0 source code from
+Java to C#.  The automated parts were ported using an improved version
+of Sharpen that can compile more advanced Java constructs and supports
+generics.  Most of the manual bits of code fall in two categories (a)
+code to integrate with the host operating system and (b) replace the
+Java JNI code used to call into C, with the ECMA CLI P/Invoke
+functionality.</p>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>The various components of XobotOS are licensed under the same license
+as their upstream providers.  The C# versions of Android is licensed
+under the terms of the Apache 2 license, while the improved version of
+Sharpen is licensed under the GPL.</p>
+
+<h1>
+<a id="xobotos-source-code" class="anchor" href="#xobotos-source-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>XobotOS Source Code</h1>
+
+<p>XobotOS is made up of the following sources:</p>
+
+<p>sharpen:</p>
+
+<pre><code>* Our updated version of Sharpen, see below for changes.
+</code></pre>
+
+<p>android/generated:</p>
+
+<pre><code>* Fully translated Java to C# code, classes that have been
+  translated in this way contain the attribute [Sharpen.Sharpened]
+
+* Empty C# stubs based on the Java declaration: these are
+      needed as intermediate steps to get things to build in the
+      new C# world.  Classes with empty stubs are decorated with
+      the [Sharpen.NakedStub] attribute
+
+android/extra-sources:
+
+* Custom written code that either fine tunes the port,
+      provides an alternative optimized version to a class or
+      provides a runtime facility.
+
+android/api:
+
+* XML files that describe the translation process from Java to C#.
+
+android/upstream:
+
+* Google's Android 4.0 source code.
+
+libxobotos:
+
+* Glue code to integrate with various Android C++ libraries as
+      well as the Linux X11 host that sets up the toplevel window
+      and the optional OpenGL context.
+
+* Mostly calls into Skia, Jpeg, OpenGL and ICU libraries.
+
+binaries:
+
+* Libraries to get you started without requiring you to build Skia,
+  and other native Android tools.
+
+* Screenshots, videos, and some basic precompiled samples.
+
+monodevelop:
+
+    * Add-in to build native XobotOS applications with MonoDevelop
+
+samples:
+
+* Ported samples to C# using XobotOS
+
+external:
+
+* Native libraries needed to build the unmanaged libxobotos C library
+</code></pre>
+
+<h1>
+<a id="sharpen" class="anchor" href="#sharpen" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sharpen</h1>
+
+<p>The outcome of this project is a vastly improved Sharpen tool that is
+able to port very sophisticated and advanced Java codebases from Java
+to C#.   This code lives in the "sharpen" directory.</p>
+
+<p>This modified version of Sharpen can cope with the following enhancements:</p>
+
+<pre><code>* Java generics
+
+* XML-driven translation process
+
+* Type remapping for native Java types to C# types, and supports
+  for custom type mappings.
+
+* Support for translating code that does native interop
+
+* Support for generating C's .c and .h files for native glue
+      (to assist in P/Invoke support)
+
+* Add attribute-supported translations
+
+* Improved incremental compilation
+</code></pre>
+
+<p>Documentation on the improved Sharpen engine will be posted in the
+future so other developers can more easily port Java code to C#.</p>
+
+<h1>
+<a id="support-" class="anchor" href="#support-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support </h1>
+
+<p>This code is provided as-is, and we do not offer support for any bits
+of code here, nor does Xamarin plan on continuing evolving XobotOS at
+this point.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
